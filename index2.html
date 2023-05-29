@@ -11,19 +11,10 @@
 
 
     </head>
-    <body>
+    <body onload="navbar(0)">
         
         <div class="container">
-            <div class="logo"><a href="./index2.html"><img src="https://cdn.dribbble.com/users/5976/screenshots/17044377/media/29500b387c4629afb7762e6afcfcd0fc.png?compress=1&resize=400x300" alt="NFT Platform" width="100" /></div></a>
-            <div class="navbar">
-                <div class="dropdown">
-                    <a href="#">Products</a>
-                    <div class="dropdown-content"><a href="./artgen.html">Art Generator</a><a href="./nftmint.html">NFT Minter</a><a href="./store.html">Store Creator</a></div>
-                </div>
-                
-                <a href="./pricing.html">Pricing</a>
-                <a href="./login3.html"><img style="margin-left: 4px;" src="./pictures/png/avatar.png" alt=""></a>
-            </div>
+            <div id="navbartag"></div>
             <div class="header" style="line-height: normal;">
                 <h1>NFT PLATFORM TO GENERATE,DEPLOY AND MINT YOUR NFT COLLECTION</h1>
                 <h3 style="font-weight: 300;">The most powerful no-code NFT tools at one place.</h3>
@@ -220,7 +211,7 @@
           </div>
         </div>
       
-          
+          <script src = "./navbar.js"></script>
     </body>
 
       
@@ -272,49 +263,6 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
-    }
-    .logo {
-        float: left;
-        margin-right: 20px;
-        margin-left:-100px;
-    }
-    .navbar {
-        float: right;
-        margin-top: 20px;
-        display: flex;
-    }
-    .navbar a {
-        display: inline-block;
-        padding: 10px;
-        text-decoration: none;
-        color: #333;
-    }
-    .navbar a:hover {
-        background-color: #f0f0f0;
-    }
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        z-index: 1;
-        min-width: 160px;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    .dropdown-content a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #333;
-    }
-    .dropdown-content a:hover {
-        background-color: #f0f0f0;
     }
     .header {
         text-align: center;
