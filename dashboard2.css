@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .logo {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.navbar {
+    float: right;
+    margin: 20px 20px 0 0;
+    padding-bottom: 20px;
+}
+.navbar a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+.navbar a:hover {
+    background-color: #f0f0f0;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+.header {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.header h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    margin-top: 12%;
+}
+  
+  .page-title {
+    font-size: 24px;
+    margin-top: 40px;
+  }
+  
+  .collection-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .collection-block {
+    width: calc(33.33% - 10px);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .actions-container {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4892b1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 7px;
+  }
+
+
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4892b1;
+    color: white;
+    padding: 45px 20px;
+    border-radius: 50%;
+    text-decoration: none;
+    opacity: 50%;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+    .back-to-top:hover {
+        background-color: #1f627f;
+        opacity: 100%;
+    }

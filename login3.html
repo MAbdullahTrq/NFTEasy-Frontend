@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>NFTEasy</title>
+        <link rel="icon" href="https://cdn.dribbble.com/users/5976/screenshots/17044377/media/29500b387c4629afb7762e6afcfcd0fc.png?compress=1&resize=400x300" type="image/x-icon" />
+
+        <link rel="icon" href="https://cdn.dribbble.com/users/5976/screenshots/17044377/media/29500b387c4629afb7762e6afcfcd0fc.png?compress=1&resize=400x300" type="image/x-icon" />
+
+        <meta
+            name="google-signin-client_id"
+            content="YOUR_CLIENT_ID.apps.googleusercontent.com"
+        />
+        <script
+            src="https://apis.google.com/js/platform.js"
+            async
+            defer
+        ></script>
+        <link rel="stylesheet" href="./style3.css" />
+    </head>
+    <body>
+        
+        <div class="navbar">
+            <div class="logo"><a href="./index2.html"><img src="https://cdn.dribbble.com/users/5976/screenshots/17044377/media/29500b387c4629afb7762e6afcfcd0fc.png?compress=1&resize=400x300" alt="NFT Platform" width="100" /></div></a>
+            <div class="navbarLinks">          
+            <a href="./index2.html">Home</a>
+            <a href="./login3.html"><img style="margin-left: 4px;" src="./pictures/png/avatar.png" alt=""></a>
+            </div>
+        </div>
+        
+        <div id="container">
+            <!-- Cover Box -->
+            <div id="cover">
+                <!-- Sign Up Section -->
+                <h1 class="sign-up">NFTEasy</h1>
+                <p class="sign-up">
+                    Enter your personal details<br />
+                    and start a journey with us
+                </p>
+                <a class="button sign-up" href="#cover">Sign Up</a>
+                <!-- Sign In Section -->
+                <h1 class="sign-in">Welcome Back!</h1>
+                <p class="sign-in">
+                    To keep connected with us please<br />
+                    login with your personal info
+                </p>
+                <br />
+                <a class="button sub sign-in" href="#">Sign In</a>
+            </div>
+            <!-- Login Box -->
+            <div id="login">
+                <h1>Sign In</h1>
+                <!--<a href="#"
+                    ><img class="social-login" src="pictures/png/google.png"
+                /></a>-->
+                <div class="btng">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<script>
+		function onSignIn(googleUser) {
+			var id_token = googleUser.getAuthResponse().id_token;
+			// Send id_token to server for verification and create user account
+			// ...
+		}
+	</script></div>
+                <p>or use your Email Account:</p>
+                <form action="./dash2.html">
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        autocomplete="off"
+                    /><br />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        autocomplete="off"
+                    /><br />
+                    <a id="forgot-pass" href="#">Forgot your password?</a><br/>
+                    <input class="submit-btn" type="submit" value="Sign In" />
+                </form>
+            </div>
+            <!-- Register Box -->
+            <div id="register">
+                <h1>Create Account</h1>
+                <!-- <a href="#"><img class="social-login" src="pictures/png/google.png"/></a> -->
+                <!-- <div class="btng2">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<script>
+		function onSignIn(googleUser) {
+			var id_token = googleUser.getAuthResponse().id_token;
+			// Send id_token to server for verification and create user account
+			// ...
+		}
+	</script></div> --> <div class="btng2">
+    <button onclick="googleSignin()" style="background-color: #fff; border: 1px solid #ccc; border-radius: 2px; color: #555; font-size: 14px; margin-top: 10px; padding: 6px 12px; width: 220px;">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" style="display: inline-block; height: 18px; margin-right: 10px; width: 18px;">
+        Continue with Google
+      </button></div>
+      
+                <p>or use your email for registration:</p>
+                <form>
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        autocomplete="off"
+                    /><br />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        autocomplete="off"
+                    /><br />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        autocomplete="off"
+                    /><br />
+                    <input class="submit-btn" type="submit" value="Sign Up" />
+                </form>
+            </div>
+        </div>
+        <!-- END Container -->
+    </body>
+</html>

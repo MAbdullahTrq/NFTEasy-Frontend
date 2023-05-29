@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #008CBA;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #005f6b;
+  }
+  
+  .links {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #008CBA;
+    text-decoration: none;
+  }
+  
+  .links a:last-child {
+    margin-right: 0;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
