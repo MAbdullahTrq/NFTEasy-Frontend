@@ -1,7 +1,7 @@
 // JavaScript code
 const nftContainer = document.getElementById('nft-container');
 const popupContainer = document.getElementById('popup-container');
-
+let nftData = null;
 // Function to retrieve NFT data from the database
 function retrieveNFTData() {
   // Make an AJAX request to the PHP file
@@ -9,7 +9,7 @@ function retrieveNFTData() {
   xhr.open('GET', 'getNFTData.php', true);
   xhr.onload = function () {
     if (xhr.status === 200) {
-      const nftData = JSON.parse(xhr.responseText);
+      nftData = JSON.parse(xhr.responseText);
       displayNFTs(nftData);
     }
   };
@@ -20,14 +20,16 @@ function retrieveNFTData() {
 function displayNFTs(nftData) {
   nftContainer.innerHTML = '';
 
-  nftData.forEach(nft => {
+  nftData.forEach(function callback(nft, index) {
     const nftBlock = document.createElement('div');
     nftBlock.className = 'nft-block';
     nftBlock.innerHTML = `
-      <img src="${nft.token_uri}" class="collection-img" alt="NFT Image"><br>
-      <p>TokenID: ${nft.token_id}</p><br>
-      <p>Price: $${nft.price}</p><br>
-      <button onclick="openPopup(${nft.token_id})">Buy</button><br>
+      <img src="${nft.tokenURI}" class="collection-img" alt="NFT Image">
+      <div class="collection-text">
+      <p>TokenID: ${nft.tokenID}</p>
+      <p>Price: ${nft.price} eth</p>
+      <button onclick="openPopup(${index})">Buy</button>
+      </div>
     `;
 
     nftContainer.appendChild(nftBlock);
@@ -35,7 +37,7 @@ function displayNFTs(nftData) {
 }
 
 // Function to open the popup
-function openPopup(tokenID) {
+function openPopup(index) {
   // AJAX request to get the NFT details from the database using tokenID
   // Implement your code to retrieve the specific NFT details from the database
 
@@ -43,10 +45,10 @@ function openPopup(tokenID) {
   const popup = document.createElement('div');
   popup.className = 'popup';
   popup.innerHTML = `
-    <img src="nft_image.jpg" alt="NFT Image">
-    <p>TokenID: ${tokenID}</p>
-    <p>Price: $100</p>
-    <button onclick="buyNFT(${tokenID})">Buy</button>
+    <img src=${nftData[index].tokenURI} alt="NFT Image">
+    <p>TokenID: ${nftData[index].tokenID}</p>
+    <p>Price: ${nftData[index].price} eth</p>
+    <button onclick="buyNFT(${nftData[index].listingID})">Buy</button>
     <button onclick="closePopup()">Close</button>
   `;
 

@@ -15,6 +15,13 @@ body {
     justify-content: center;
   }
   
+  .collection-text {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    text-align: center;
+  }
   .nft-block {
     display: flex;
     flex-wrap: wrap;
@@ -39,14 +46,17 @@ body {
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
-    width: 300px;
+    width: 500px;
+    height: fit-content;
+    border: 1px solid #ccc;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
   }
   
   .popup img {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     margin-bottom: 10px;
   }
   
