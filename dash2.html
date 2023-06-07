@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dashboard2.css">
+  <script src="node_modules/ethers/dist/ethers.js"></script>
   <title>NFTEasy Dashboard</title>
 </head>
-<body onload="navbar(2)">
+<body onload="init()">
   <div id="navbartag"></div>
   <div class="container">
     <h1 class="page-heading">My Dashboard</h1>
@@ -15,11 +16,12 @@
       <!-- Collection blocks will be dynamically added here -->
     </div>
 
-    <button class="add-collection-button" style="margin: 20px 0 0 5%;">Add Collection</button>
+    <button class="add-collection-button" style="margin: 20px 0 0 5%;" onclick="addCollection()">Add Collection</button>
 
     <button class="floating-button back-to-top" onclick="topFunction()">Back to Top</button>
   </div>
 
+  <script src="ethers.js"></script>
   <script src="dashboard.js"></script>
   <script src="navbar.js"></script>
 </body>

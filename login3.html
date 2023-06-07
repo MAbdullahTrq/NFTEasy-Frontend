@@ -55,17 +55,9 @@
 		}
 	</script></div>
                 <p>or use your Email Account:</p>
-                <form action="./dash2.html">
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        autocomplete="off"
-                    /><br />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        autocomplete="off"
-                    /><br />
+                <form action="login.php" method="POST">
+                    <input type="email" name="email" placeholder="Email" autocomplete="off" required /><br /><br />
+                    <input type="password" name="password" placeholder="Password" autocomplete="off" required /><br />
                     <a id="forgot-pass" href="#">Forgot your password?</a><br/>
                     <input class="submit-btn" type="submit" value="Sign In" />
                 </form>
@@ -90,23 +82,12 @@
       
                 <p>or use your email for registration:</p>
                 <form>
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        autocomplete="off"
-                    /><br />
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        autocomplete="off"
-                    /><br />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        autocomplete="off"
-                    /><br />
-                    <input class="submit-btn" type="submit" value="Sign Up" />
-                </form>
+                    <form action="signup.php" method="POST">
+                        <input type="text" name="name" placeholder="Name" autocomplete="off" required /><br />
+                        <input type="email" name="email" placeholder="Email" autocomplete="off" required /><br />
+                        <input type="password" name="password" placeholder="Password" autocomplete="off" required /><br />
+                        <input class="submit-btn" type="submit" value="Sign Up" />
+                    </form>
             </div>
         </div>
         <!-- END Container -->
