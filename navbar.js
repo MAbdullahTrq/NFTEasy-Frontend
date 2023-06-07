@@ -59,7 +59,7 @@ function navbar(type)
         background-color: #f0f0f0;
     }
     .dropdown {
-        position: relative;
+        /*position: relative;*/
         display: inline-block;
         
     }

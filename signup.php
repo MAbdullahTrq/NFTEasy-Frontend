@@ -1,6 +1,6 @@
 <?php
 // Establish the database connection
-$conn = mysqli_connect("localhost", "admin", "password", "NFTEasy");
+$conn = mysqli_connect("localhost", "admin", "password", "nfteasy");
 
 // Check for connection errors
 if (!$conn) {
