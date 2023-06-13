@@ -80,3 +80,16 @@ body {
         background-color: #1f627f;
         opacity: 100%;
     }
+
+    .connect-wallet-button {
+      margin: 10px;
+      padding: 10px;
+      background-color: #ccc;
+      color: #000;
+    }
+    
+    #wallet-address {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    

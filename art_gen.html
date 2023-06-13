@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Art Generator</title>
+  <link rel="icon" href="/img/logo.webp" type="image/x-icon" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="artgen.css">
+  <script src="app.js"></script>
+  <script src="artgen.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body onload="navbar(0)">
+
+  <div class="container">
+    <div id="navbartag"></div>
+    <div class="header">
+      <h1>Art Generator</h1>
+      <h3>Create unique artworks with our AI-powered generator</h3>
+      <a href="#" class="button">Generate Artwork</a>
+    </div>
+  </div>
+
+  <!-- Generated Artwork -->
+  <div class="artwork-container">
+    <img src="" id="generated-artwork" alt="Generated Artwork">
+  </div>
+
+  <script src="./navbar.js"></script>
+</body>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Support Center</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>
+
+<style>
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .header {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .header h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4ab0b5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .button:hover {
+    background-color: #21868b;
+  }
+
+  .artwork-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .artwork-container img {
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 auto;
+  }
+
+  .footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer ul li {
+    margin-bottom: 5px;
+  }
+
+  .footer ul li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .footer ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+</style>

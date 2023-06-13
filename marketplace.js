@@ -1,10 +1,8 @@
-// JavaScript code
 const nftContainer = document.getElementById('nft-container');
 const popupContainer = document.getElementById('popup-container');
 let nftData = null;
-// Function to retrieve NFT data from the database
 function retrieveNFTData() {
-  // Make an AJAX request to the PHP file
+
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'getNFTData.php', true);
   xhr.onload = function () {
@@ -16,7 +14,7 @@ function retrieveNFTData() {
   xhr.send();
 }
 
-// Function to display NFTs
+
 function displayNFTs(nftData) {
   nftContainer.innerHTML = '';
 
@@ -36,12 +34,8 @@ function displayNFTs(nftData) {
   });
 }
 
-// Function to open the popup
-function openPopup(index) {
-  // AJAX request to get the NFT details from the database using tokenID
-  // Implement your code to retrieve the specific NFT details from the database
 
-  // Example code to create and display the popup
+function openPopup(index) {
   const popup = document.createElement('div');
   popup.className = 'popup';
   popup.innerHTML = `
@@ -55,10 +49,8 @@ function openPopup(index) {
   popupContainer.appendChild(popup);
 }
 
-// Function to close the popup
 function closePopup() {
   popupContainer.innerHTML = '';
 }
 
-// Call the function to retrieve NFT data from the database
 retrieveNFTData();
