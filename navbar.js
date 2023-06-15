@@ -93,7 +93,7 @@ function navbar(type)
     }
     </style>
           <div class="navbar">
-    <div class="logo"><a src="./index2.html"><img src="img/logo.webp" alt="NFT Platform" width="100" /></div>
+    <div class="logo"><a href="index2.html"><img src="img/logo.webp" alt="NFT Platform" width="100"/></div>
     <div class="navbar-links">
     ${navlinks}
     </div>
