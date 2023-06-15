@@ -15,12 +15,14 @@ function navbar(type)
     {
         navlinks = `<a href="index2.html">Home</a>
         <a href="dash2.html">Collection</a>
+        <a href="art_gen.html">Art Generator</a>
         <a href="login3.html">Logout</a>`;
     }
     else if (type === 2)
     {
         navlinks = `<a href="index2.html">Home</a>
         <a href="marketplace.html">Marketplace</a>
+        <a href="art_gen.html">Art Generator</a>
         <a href="login3.html">Logout</a>`;
     }
     else if (type === 3)
@@ -29,6 +31,13 @@ function navbar(type)
         <a href="./index2.html">Home</a>
         <a href="./pricing.html">Pricing</a>
         <a href="./login3.html"><img style="margin-left: 4px;" src="./pictures/png/avatar.png" alt=""></a>`;
+    }
+    else if (type === 4)
+    {
+        navlinks = `<a href="index2.html">Home</a>
+        <a href="dash2.html">Collection</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="login3.html">Logout</a>`;
     }
     navbartag.innerHTML = `
     <style>

@@ -1,103 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="icon" href="/img/logo.webp" type="image/x-icon" />
-
   <meta charset="UTF-8">
-  <title>Coming Soon</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    .wrapper {
-      text-align: center;
-    }
-
-    .logo {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-    }
-
-    .loading-text {
-      font-size: 2rem;
-    }
-
-    .animation-container {
-      width: 150px;
-      height: 150px;
-      position: relative;
-      margin: 0 auto;
-      animation: rotate 2s infinite linear;
-    }
-
-    .animation-circle {
-      width: 30px;
-      height: 30px;
-      background-color: #fff;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      animation: scale 1s infinite ease-in-out;
-    }
-
-    .button {
-      background-color: #fff;
-      color: #000;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    .button:hover {
-      background-color: #ccc;
-    }
-
-    @keyframes rotate {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes scale {
-      0%, 100% {
-        transform: scale(0);
-      }
-      50% {
-        transform: scale(1);
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFTEasy - Art Generator</title>
+  <link rel="stylesheet" href="artgen.css">
+  <script src="navbar.js"></script>
 </head>
-<body>
-  <div class="wrapper">
-    <div class="logo">Coming Soon</div>
-    <div class="loading-text">Working on it...</div>
-    <div class="animation-container">
-      <div class="animation-circle"></div>
-    </div>
-    <button onclick="goBack()" class="button">Go Back</button>
-  </div>
+<body onload="navbar(0)">
+  <div id="navbartag"></div>
+  <main>
+    <section class="feature">
+      <h2>Welcome to Art Generator</h2>
+      <p>Create stunning and unique artwork with just a few clicks. Our Art Generator leverages cutting-edge AI technology to produce visually captivating images that can be used for various purposes, including NFT creation, digital art, and more.</p>
+      <img class="artgenimg" src="pictures/artgen (1).jfif" style="width: 400px; height: auto;" alt="Exemplary Image 1">
+      <p>With our intuitive and user-friendly interface, anyone can become an artist. No technical expertise or design skills are required. Simply input your preferences, and let our Art Generator do the magic.</p>
+      <img class="artgenimg" src="pictures/artgen (2).jfif" style="width: 400px; height: auto;" alt="Exemplary Image 2">
+    </section>
 
-  <script>
-    function goBack() {
-      window.history.back();
-    }
-  </script>
+    <section class="cta">
+      <h3>Ready to unleash your creativity?</h3>
+      <a href="#" class="signup-button">Sign Up Now</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Art Generator. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
