@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="dashboard2.css">
   <title>NFTEasy Dashboard</title>
 </head>
-<body onload="navbar(2)">
+<body onload="pageload()">
   <div id="navbartag"></div>
   <div class="container">
     <h1 class="page-heading">My Dashboard</h1>
@@ -15,15 +15,15 @@
       <!-- Collection blocks will be dynamically added here -->
     </div>
 
-    <button class="add-collection-button" style="margin: 20px 0 0 5%;" onclick="createCollection()">Add Collection</button>
+    <button class="add-collection-button" style="margin: 20px 0 0 5%;">Add Collection</button>
     
-    <button id="connect-wallet-button" class="connect-wallet-button" onclick="connectWallet()">Connect Wallet</button>
+    <button id="connect-wallet-button" class="connect-wallet-button" >Connect Wallet</button>
     <div id="wallet-address"></div>
 
     <button class="floating-button back-to-top" onclick="topFunction()">Back to Top</button>
   </div>
 
-  <!-- <script src="node_modules/ethers/lib.commonjs/ethers.js" ></script> -->
+  <script src="node_modules/ethers/lib.commonjs/ethers.js" ></script>
   <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"></script>
   <script src="dashboard.js"></script>
   <script src="navbar.js"></script>

@@ -6,7 +6,7 @@ let factoryContractAbi;
 let factoryContract;
 
 
-let NFTContractAbi = [
+let NFTContractAbi =[
 	{
 		"inputs": [
 			{
@@ -250,12 +250,12 @@ let NFTContractAbi = [
 	},
 	{
 		"inputs": [],
-		"name": "getName",
+		"name": "getTokenCount",
 		"outputs": [
 			{
-				"internalType": "string",
+				"internalType": "uint256",
 				"name": "",
-				"type": "string"
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -275,6 +275,19 @@ let NFTContractAbi = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getname",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -308,6 +321,44 @@ let NFTContractAbi = [
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "isOwner",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "isTokenMinted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "tokenId",
 				"type": "uint256"
 			},
@@ -323,18 +374,7 @@ let NFTContractAbi = [
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
+		"inputs": [],
 		"name": "mintNFT",
 		"outputs": [],
 		"stateMutability": "nonpayable",
@@ -580,7 +620,7 @@ let NFTContractAbi = [
 
 async function connectFactory() {
   try {
-    factoryContractAddress = "0x06432615098D986b8e981D6cA8a1835049c87cc0"; // Replace with factory contract address
+    factoryContractAddress = "0x25ecAD4ba8600b8740373CF309f34B06db4710f4"; // Replace with factory contract address
     factoryContractAbi = 
   [
     {
@@ -727,6 +767,10 @@ function updateWalletAddress() {
   getContractsByOwner(connectedWalletAddress);
 }
 
+function pageload() {
+  connectWallet();
+  navbar(2);
+}
 // Function to get the contracts by owner and display them as collection blocks
 async function getContractsByOwner(owner) {
   try {
@@ -743,9 +787,10 @@ async function getContractsByOwner(owner) {
     contracts.forEach(async (contractAddress) => {
       // const contract = connectNFTContract(contractAddress);
       const contract = new ethers.Contract(contractAddress, NFTContractAbi, ethersProvider.getSigner());
-      const contractName = await contract.getName();
+      const contractName = await contract.getname();
       const collectionBlock = document.createElement("div");
       collectionBlock.classList.add("collection-block");
+	  collectionBlock.onclick = function() {window.location.href = "collection.html?contractAddress=" + contractAddress};
       
       const collectionName = document.createElement("h2");
       collectionName.innerText = `Contract Name: ${contractName}`;
@@ -753,7 +798,6 @@ async function getContractsByOwner(owner) {
       const collectionAddress = document.createElement("p");
       collectionAddress.innerText = `Contract Address: ${contractAddress}`;
       collectionBlock.appendChild(collectionAddress);
-
       collectionContainer.appendChild(collectionBlock);
     });
   } catch (error) {
