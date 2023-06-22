@@ -49,7 +49,7 @@
     var imageElements = document.querySelectorAll('.swiper-slide img');
     
     for (var i = 0; i < imageElements.length; i++) {
-      //var randomIndex = Math.floor(Math.random() * imageUrls.length);
+      var randomIndex = Math.floor(Math.random() * imageUrls.length);
       imageElements[i].src = imageUrls[i];
       
     }
