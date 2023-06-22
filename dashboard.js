@@ -790,8 +790,7 @@ async function getContractsByOwner(owner) {
       const contractName = await contract.getname();
       const collectionBlock = document.createElement("div");
       collectionBlock.classList.add("collection-block");
-	  collectionBlock.onclick = function() {window.location.href = "collection.html?contractAddress=" + contractAddress};
-      
+	  collectionBlock.onclick = function() {window.location.href = "collection.html?contractAddress=" + contractAddress + "&contractName=" + contractName};
       const collectionName = document.createElement("h2");
       collectionName.innerText = `Contract Name: ${contractName}`;
       collectionBlock.appendChild(collectionName);
