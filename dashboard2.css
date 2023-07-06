@@ -41,6 +41,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  .collection-block:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #cecece;
+    cursor: pointer;
+  }
   
   .actions-container {
     margin-top: 20px;

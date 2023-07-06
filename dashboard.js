@@ -769,7 +769,7 @@ function updateWalletAddress() {
 
 function pageload() {
   connectWallet();
-  navbar(2);
+  navbar(6);
 }
 // Function to get the contracts by owner and display them as collection blocks
 async function getContractsByOwner(owner) {

@@ -8,9 +8,14 @@
 	<style>
 		.mintButton {
 			margin: 20px 0 0 5%;
+			padding-top: 20px;
 			align-items: center;
+
 		}
 
+		.tokenURI{
+			padding-bottom: 10px;
+		}
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #FFFFFF;
@@ -73,12 +78,11 @@
 	</div>
 	<div id="popup" class="popup">
 		<h2>Mint New NFT</h2>
-		<label for="tokenId">Token ID:</label>
-		<input type="text" id="tokenId">
-		<br>
+		<div id="tokenURI">
 		<label for="tokenUri">Token URI:</label>
 		<input type="text" id="tokenUri">
 		<br>
+	</div>
 		<button id="mintSubmit" onclick="mintNFT()">Mint</button>
 		<button id="mintCancel" onclick="closePopup()">Cancel</button>
 	</div>
@@ -707,7 +711,7 @@
 			console.log(collectionName);
 			navbar(2);
 			fetchNFTs();
-			document.getElementById('collection').innerHTML += collectionName;
+			document.getElementById('collectionName').innerHTML += collectionName;
 		}
 
 		async function fetchNFTs(contractAddress) {
@@ -772,7 +776,7 @@
 			try {
 				// Mint a new NFT
 				await contract.mintNFT();
-				const tokenId = (await contract.getTokenCount()) - 1;
+				const tokenId = (await contract.getTokenCount());
 
 				// Set the URI of the minted token
 				const tx = await contract.setTokenURI(tokenId, tokenUri);

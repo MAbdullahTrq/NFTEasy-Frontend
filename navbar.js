@@ -13,14 +13,13 @@ function navbar(type)
     }
     else if (type === 1)
     {
-        navlinks = `<a href="index2.html">Home</a>
-        <a href="dash2.html">Collection</a>
+        navlinks = `<a href="dash2.html">Dashboard</a>
         <a href="art_gen.html">Art Generator</a>
         <a href="login3.html">Logout</a>`;
     }
     else if (type === 2)
     {
-        navlinks = `<a href="index2.html">Home</a>
+        navlinks = `<a href="dash2.html">Dashboard</a>
         <a href="marketplace.html">Marketplace</a>
         <a href="art_gen.html">Art Generator</a>
         <a href="login3.html">Logout</a>`;
@@ -34,11 +33,30 @@ function navbar(type)
     }
     else if (type === 4)
     {
-        navlinks = `<a href="index2.html">Home</a>
+        navlinks = `<a href="dash2.html">Dashboard</a>
         <a href="dash2.html">Collection</a>
         <a href="marketplace.html">Marketplace</a>
         <a href="login3.html">Logout</a>`;
     }
+    else if (type === 5)
+    {
+        
+        navlinks = `
+        <a href="./index2.html">Home</a>
+        <div class="dropdown">
+        <a href="#">Products</a>
+        <div class="dropdown-content"><a href="./artgen.html">Art Generator</a><a href="./nftmint.html">NFT Minter</a><a href="./store.html">Store Creator</a></div>
+    </div>
+    <a href="./login3.html"><img style="margin-left: 4px;" src="./pictures/png/avatar.png" alt=""></a>`;
+    }
+    else if (type === 6)
+    {
+        navlinks = `
+        <a href="marketplace.html">Marketplace</a>
+        <a href="art_gen.html">Art Generator</a>
+        <a href="login3.html">Logout</a>`;
+    }
+
     navbartag.innerHTML = `
     <style>
     .logo {
