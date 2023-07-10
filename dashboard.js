@@ -620,7 +620,7 @@ let NFTContractAbi =[
 
 async function connectFactory() {
   try {
-    factoryContractAddress = "0x25ecAD4ba8600b8740373CF309f34B06db4710f4"; // Replace with factory contract address
+    factoryContractAddress = "0xfF5B99a39BFE689487ca3EAa206e21E6D0d1d14E"; // Replace with factory contract address
     factoryContractAbi = 
   [
     {

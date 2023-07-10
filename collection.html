@@ -86,6 +86,19 @@
 		<button id="mintSubmit" onclick="mintNFT()">Mint</button>
 		<button id="mintCancel" onclick="closePopup()">Cancel</button>
 	</div>
+	
+	<div id="sellPopup" class="popup">
+		<h2>List for Sale</h2>
+		<div id="Price">
+		<label for="Price">Price:</label>
+		<input type="text" id="priceList">
+		<input type="hidden" value="" id="sellPopupTokenURI">
+		<input type="hidden" value="" id="sellPopupTokenId">
+		<br>
+	</div>
+		<button id="Submit" onclick="listNFT()">List</button>
+		<button id="Cancel" onclick="closeSellPopup()">Cancel</button>
+	</div>
 
 	<script src="ethers.js"></script>
 	<script src="navbar.js"></script>
@@ -706,6 +719,7 @@
 		var collectionName = url.searchParams.get("contractName");
 		ethersProvider = new ethers.providers.Web3Provider(window.ethereum);
 		const contract = new ethers.Contract(address, abi, ethersProvider.getSigner());
+		const marketplace = 0xa3A1C49381Ac54E6d9DD4040DF52505773ADc81B;
 		
 		function pageload() {
 			console.log(collectionName);
@@ -747,9 +761,17 @@
 						const nftDetails = document.createElement('p');
 						nftDetails.classList.add('nft-details');
 						nftDetails.textContent = `Token ID: ${i}`;
-
+						
+						const nftList = document.createElement('button');
+						nftList.innerHTML = "SellNFT";
+						nftList.classList.add('nft-details');
+						const tkuri = tokenUri; //scope issue
+						nftList.addEventListener('click', (ev) => {
+							sellPopup(i, tkuri);
+						});
 						nftBlock.appendChild(nftImage);
 						nftBlock.appendChild(nftDetails);
+						nftBlock.appendChild(nftList);
 						collectionDiv.appendChild(nftBlock);
 					}
 				}
@@ -767,9 +789,67 @@
 			const popup = document.getElementById('popup');
 			popup.style.display = 'none';
 		}
+		
+		function sellPopup(tokenId, tokenURI) {
+			const popup = document.getElementById('sellPopup');
+			popup.style.display = 'block';
+			document.getElementById('sellPopupTokenURI').value = tokenURI;
+			document.getElementById('sellPopupTokenId').value = tokenId;
+		}
+
+		function closeSellPopup() {
+			const popup = document.getElementById('sellPopup');
+			popup.style.display = 'none';
+		}
+
+	async function listNFT() {
+		const tokenId = document.getElementById('sellPopupTokenId').value;
+		const tokenURI = document.getElementById('sellPopupTokenURI').value;
+		const priceInput = document.getElementById('priceList');
+		const price = Number.parseFloat(priceInput.value);
+		
+		// Check if any of the required fields are empty
+		if (!tokenId) {
+			alert('ID missing');
+			return;
+		}
+		else if (!tokenURI ) {
+			alert('URI missing');
+			return;
+		}
+		else if (!price) {
+			alert('Price missing');
+			return;
+		}
+		
+
+		const headers = new Headers();
+		headers.append("Content-Type", "application/json");
+
+		const response = await fetch('./list-nft.php', {
+			method: 'POST',
+			body: JSON.stringify({
+				price: price,
+				tokenId: tokenId,
+				collectionAdd: address,
+				tokenURI: tokenURI
+			}),
+			headers: headers
+		});
+
+		if (response.status < 300 && response.status >= 200) {
+			alert('Marked for sale');
+		} else {
+			alert('Error occurred');
+		}
+
+		
+}
+
+
+
 
 		async function mintNFT() {
-			const tokenIdInput = document.getElementById('tokenId');
 			const tokenUriInput = document.getElementById('tokenUri');
 			const tokenUri = tokenUriInput.value;
 
